@@ -22,7 +22,6 @@ function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
   evt.target.classList.remove('blue')
-  evt.target.classList.remove('invisible')
   updateCounts()
 }
 
@@ -30,13 +29,13 @@ function makeGreen (evt) {
 function makeBlue (evt) {
   evt.target.classList.toggle('blue')
   evt.target.classList.remove('green')
-  evt.target.classList.remove('invisible')
-  updateCounts()
+ updateCounts()
 }
 // CREATE FUNCTION hide HERE
 function hide (evt) {
   evt.target.classList.toggle('invisible')
   evt.target.classList.remove('blue')
+  evt.target.classList.remove('green')
   updateCounts()
 }
 
@@ -59,14 +58,12 @@ function updateCounts () {
   ]
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   for (i=0; i < dotsArray.length; i++) {
-    if (dotsArray[i].classList.contains('blue')) {
-      totals.blue++
-    }
-    if (dotsArray[i].classList.contains('green')) {
-      totals.green++
-    }
     if (dotsArray[i].classList.contains('invisible')) {
       totals.invisible++
+    } else if (dotsArray[i].classList.contains('green')) {
+      totals.green++
+    } else if (dotsArray[i].classList.contains('blue')) {
+      totals.blue++
     }
   }
 
