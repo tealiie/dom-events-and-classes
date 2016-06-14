@@ -21,6 +21,7 @@ function bindEventListeners (dots) {
 function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
+
   updateCounts()
 }
 
@@ -28,11 +29,13 @@ function makeGreen (evt) {
 function makeBlue (evt) {
   //evt.preventDefault()
   evt.target.classList.toggle('blue')
+
   updateCounts()
 }
 // CREATE FUNCTION hide HERE
 function hide (evt) {
   evt.target.classList.toggle('invisible')
+
   updateCounts()
 }
 
@@ -56,14 +59,14 @@ function updateCounts () {
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
   for (i=0; i < dotsArray.length; i++) {
     if (dotsArray[i].classList.contains('blue')) {
-      totals.blue++;
+      totals.blue++
     }
-    // if (dotsArray[i].classList.contains('blue')) {
-    //   totals.blue++
-    // }
-    // if (dotsArray[i].classList.contains('blue')) {
-    //   totals.blue++
-    // }
+    if (dotsArray[i].classList.contains('green')) {
+      totals.green++
+    }
+    if (dotsArray[i].classList.contains('invisible')) {
+      totals.invisible++
+    }
   }
 
 // Repeat that check for 'green' and 'invisible' classes.
