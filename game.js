@@ -42,9 +42,31 @@ function updateCounts () {
     green: 0,
     invisible: 0
   }
-
+  var dotsArray = [
+  document.getElementsByClassName('board')[0].children[0],
+  document.getElementsByClassName('board')[0].children[1],
+  document.getElementsByClassName('board')[0].children[2],
+  document.getElementsByClassName('board')[0].children[3],
+  document.getElementsByClassName('board')[0].children[4],
+  document.getElementsByClassName('board')[0].children[5],
+  document.getElementsByClassName('board')[0].children[6],
+  document.getElementsByClassName('board')[0].children[7],
+  document.getElementsByClassName('board')[0].children[8]
+  ]
   // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
+  for (i=0; i < dotsArray.length; i++) {
+    if (dotsArray[i].classList.contains('blue')) {
+      totals.blue++;
+    }
+    // if (dotsArray[i].classList.contains('blue')) {
+    //   totals.blue++
+    // }
+    // if (dotsArray[i].classList.contains('blue')) {
+    //   totals.blue++
+    // }
+  }
 
+// Repeat that check for 'green' and 'invisible' classes.
   // Once you've done the counting, this function will update the display
   displayTotals(totals)
 }
