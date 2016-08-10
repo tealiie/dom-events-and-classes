@@ -20,6 +20,7 @@ function bindEventListeners (dots) {
 function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
+  evt.target.classList.remove('blue')
   updateCounts()
 }
 
@@ -43,24 +44,22 @@ function updateCounts () {
     invisible: 0
   }
 
-  // WRITE CODE HERE TO COUNT BLUE, GREEN, AND INVISIBLE DOTS
-
   // I fixed this line. There was some weird hidden character in front of the console.log and the closing }
 function counter () {
   console.log(document.getElementsByClassName('board')[0].children)
 }
 
 
-     for (var i = 0; i < dotArray.length; i++) {
-       if (dotArray[i].classList.contains('blue') === true) {
-         totals.blue += 1
-       } else if
-         (dotArray[i].classList.contains('green') === true) {
-           totals.green += 1
-         } else if (dotArray[i].classList.contains('invisible') === true) {
-           totals.invisible += 1
-       }
-     }
+ for (var i = 0; i < dotArray.length; i++) {
+   if (dotArray[i].classList.contains('blue') === true) {
+     totals.blue += 1
+   } else if
+     (dotArray[i].classList.contains('green') === true) {
+       totals.green += 1
+     } else if (dotArray[i].classList.contains('invisible') === true) {
+       totals.invisible += 1
+   }
+ }
 
 
 
