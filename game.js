@@ -20,7 +20,6 @@ function bindEventListeners (dots) {
 function makeGreen (evt) {
   evt.preventDefault()
   evt.target.classList.toggle('green')
-  evt.target.classList.remove('blue')
   updateCounts()
 }
 
@@ -31,9 +30,8 @@ function makeBlue (evt) {
 }
 
 // CREATE FUNCTION hide HERE
-// You might want to try toggling invisible, so that invisible dots can be made visible again? But that's your call. ;)
 function hide (evt) {
-  evt.target.classList.add('invisible')
+  evt.target.classList.toggle('invisible')
   updateCounts()
 }
 
@@ -44,12 +42,12 @@ function updateCounts () {
     invisible: 0
   }
 
-  // I fixed this line. There was some weird hidden character in front of the console.log and the closing }
+
 function counter () {
-  console.log(document.getElementsByClassName('board')[0].children)
+  return document.getElementsByClassName('board')[0].children
 }
 
-
+function countDotColors () {
  for (var i = 0; i < dotArray.length; i++) {
    if (dotArray[i].classList.contains('blue') === true) {
      totals.blue += 1
@@ -59,6 +57,7 @@ function counter () {
      } else if (dotArray[i].classList.contains('invisible') === true) {
        totals.invisible += 1
    }
+ }
  }
 
 
