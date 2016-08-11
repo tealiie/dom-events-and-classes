@@ -47,18 +47,18 @@ function counter () {
   return document.getElementsByClassName('board')[0].children
 }
 
-function countDotColors () {
- for (var i = 0; i < dotArray.length; i++) {
-   if (dotArray[i].classList.contains('blue') === true) {
+var dotsArray = document.getElementsByClassName('board')[0].children
+
+ for (var i = 0; i < dotsArray.length; i++) {
+   if (dotsArray[i].classList.contains('blue') === true) {
      totals.blue += 1
-   } else if
-     (dotArray[i].classList.contains('green') === true) {
-       totals.green += 1
-     } else if (dotArray[i].classList.contains('invisible') === true) {
-       totals.invisible += 1
-   }
+} else if (dotsArray[i].classList.contains('green') === true) {
+  totals.green += 1
+} else if (dotsArray[i].classList.contains('invisible') === true ) {
+  totals.invisible += 1
+}
  }
- }
+
 
 
 
